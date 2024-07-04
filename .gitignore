@@ -1,0 +1,11 @@
+outputs
+logs
+wandb
+saved_models
+notebooks
+*.ipynb_checkpoints
+*__pycache__
+*.zip
+data/downloaded
+data/processed
+data/*/raw
