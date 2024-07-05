@@ -1,0 +1,6 @@
+*md
+*png
+*ipynb
+.gitignore
+pre-commit-config.yaml
+.git
