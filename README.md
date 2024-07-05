@@ -11,6 +11,7 @@ I have saved model checkpoints (model and optimiser state dict) in the `./saved_
     * There is a <a href="./bert_mlp/BERT_MLP_AGNEWS.ipynb">notebook</a> showing how I trained and saved the MLP.
 
 ## Building the image and testing:
+* The base image used is from <a href="https://hub.docker.com/r/amazon/aws-lambda-python">aws-lambda-python</a>.
 * To build the cpu image, navigate to root of repo and run:
 
     ```bash
@@ -35,7 +36,7 @@ I have saved model checkpoints (model and optimiser state dict) in the `./saved_
     {"statusCode": 200, "headers": {"Content-Type": "application/json"}, "body": "{\"article_types\": [\"Sports\"]}"}
     ```
 
-    i.e., the category of the text is that it is "Sports".
+    i.e., "Cristiano Ronaldo scored a goal against Argentina!" is predicted to belong to the "Sports" label.
 
-    The first request may take longer to download the hf bert model, 
-    and every following request should be significantly faster. Locally, the first request took `58812.12 ms` while the others took about `600 ms` (~100 times quicker than the first request).
+    The first request may take longer to download the hf BERT model, 
+    and the following requests should be significantly faster. Testing locally (8 gen intel i5-U cpu), the first request took `58812.12 ms` while the others took about `600 ms` (~100 times quicker than the first request).
